@@ -1,0 +1,19 @@
+{
+  "name": "simple-countdown",
+  "version": "0.1.0",
+  "description": "A simple countdown timer that emits events",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main",
+    "test": "standard && jest"
+  },
+  "author": "bmordan",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^21.2.1",
+    "standard": "^10.0.3"
+  },
+  "dependencies": {
+    "moment": "^2.19.1"
+  }
+}
