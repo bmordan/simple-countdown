@@ -57,3 +57,7 @@ hours|h
 minutes|m
 seconds|s
 milliseconds|ms
+
+```js
+new Timer({minutes: 3, seconds: 30}) || new new Timer({m: 3, s: 30})
+```

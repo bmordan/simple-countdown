@@ -10,7 +10,12 @@ test('should validate its arguments', function () {
   function timer () {
     return new Timer({wrong: 2})
   }
-  expect(timer).toThrowError('use one of these allowed units: years, y, months, M, weeks, w, days, d, hours, h, minutes, m, seconds, s, milliseconds, ms')
+  expect(timer).toThrowError('allowed units: years, y, months, M, weeks, w, days, d, hours, h, minutes, m, seconds, s, milliseconds, ms')
+})
+
+test('should be able to start a timer with a compound duration', function () {
+  const timer = new Timer({m: 1, s: 30})
+  expect(timer.duration.asMilliseconds()).toBe(90000)
 })
 
 test('should emit a start event', function () {

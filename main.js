@@ -20,14 +20,15 @@ const units = [
 ]
 
 class Timer extends EventEmitter {
-  constructor (opts) {
+  constructor (duration) {
     super()
-    this.unit = Object.keys(opts).pop()
-    if (units.indexOf(this.unit) < 0) {
-      throw new Error(`use one of these allowed units: ${units.join(', ')}`)
-    }
-    this.rawValue = opts[this.unit]
-    this.duration = moment.duration(this.rawValue, this.unit)
+
+    const isValid = Object.keys(duration)
+      .every(unit => (units.indexOf(unit) > -1))
+
+    if (!isValid) throw new Error(`allowed units: ${units.join(', ')}`)
+
+    this.duration = moment.duration(duration)
   }
   start () {
     this.current = this.duration.clone()
