@@ -29,6 +29,7 @@ class Timer extends EventEmitter {
     if (!isValid) throw new Error(`allowed units: ${units.join(', ')}`)
 
     this.duration = moment.duration(duration)
+    this.formattedDuration = this._formatTime('duration')
   }
   start () {
     this.current = this.duration.clone()
@@ -51,14 +52,14 @@ class Timer extends EventEmitter {
     return {
       duration: this.duration.asMilliseconds(),
       current: this.current.asMilliseconds(),
-      formatted: this._formatTime(),
+      formatted: this._formatTime('current'),
       percentage: this._getPercentage()
     }
   }
 
-  _formatTime () {
+  _formatTime (type) {
     return ['h', 'm', 's'].map(unit => {
-      const u = this.current.get(unit)
+      const u = this[type].get(unit)
       const str = u.toString().substring(0, 2)
       return u < 10 ? `0${str}` : str
     }).join(':')

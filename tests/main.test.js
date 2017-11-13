@@ -4,6 +4,7 @@ const Timer = require('../main')
 test('should be able to start a timer with a duration', function () {
   const timer = new Timer({seconds: 2})
   expect(timer.duration.asMilliseconds()).toBe(2000)
+  expect(timer.formattedDuration).toBe('00:00:02')
 })
 
 test('should validate its arguments', function () {
