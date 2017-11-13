@@ -15,6 +15,8 @@ const Timer = require('simple-countdown')
 
 const timer = new Timer({minutes: 5})
 
+timer.formattedDuration // '00:05:00'
+
 timer.on('start', function (evt) {
   // timer has started
 })
