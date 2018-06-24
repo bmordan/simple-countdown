@@ -2,18 +2,26 @@
   "name": "simple-countdown",
   "version": "1.1.0",
   "description": "A simple countdown timer that emits events",
-  "main": "main.js",
+  "main": "src/main.js",
   "scripts": {
     "start": "node main",
+    "build": "./node_modules/.bin/babel ./main.js --out-dir src",
     "test": "standard && jest"
   },
   "author": "bmordan",
   "license": "MIT",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "jest": "^21.2.1",
     "standard": "^10.0.3"
   },
   "dependencies": {
     "moment": "^2.19.1"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
   }
 }
