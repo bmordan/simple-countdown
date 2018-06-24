@@ -1,6 +1,6 @@
 {
   "name": "simple-countdown",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "A simple countdown timer that emits events",
   "main": "index.js",
   "scripts": {
