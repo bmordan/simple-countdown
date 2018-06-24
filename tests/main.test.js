@@ -1,5 +1,5 @@
 /* global jest test expect */
-const Timer = require('../main')
+const Timer = require('../src/main')
 
 test('should be able to start a timer with a duration', function () {
   const timer = new Timer({seconds: 2})
